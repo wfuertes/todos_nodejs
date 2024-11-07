@@ -1,0 +1,41 @@
+<h1>Todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>ID</th>
+      <th>Text</th>
+      <th>Date</th>
+      <th>Created At</th>
+      <th>Completed At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if todos.length}}
+    {{#each todos}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.id}}</td>
+      <td>{{this.text}}</td>
+      <td>{{this.date}}</td>
+      <td>{{this.createdAt}}</td>
+      <td>{{this.completedAt}}</td>
+    </tr>
+    {{/each}}
+    {{else}}
+    <p>No todos found</p>
+    {{/if}}
+  </tbody>
+</table>
+
+<!-- Pagination Footer -->
+<div class="pagination">
+  {{#if hasPrevPage}}
+  <a href="/?page={{prevPage}}&size={{pageSize}}">Previous</a>
+  {{/if}}
+  <span>Page {{currentPage}} of {{totalPages}}</span>
+  {{#if hasNextPage}}
+  <a href="/?page={{nextPage}}&size={{pageSize}}">Next</a>
+  {{/if}}
+</div>

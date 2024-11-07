@@ -7,7 +7,7 @@ export class PageUtils {
             return 0;
         }
 
-        if (query.page > 1) {
+        if (query.page > 0) {
             return (query.page - 1) * query.size;
         }
         
